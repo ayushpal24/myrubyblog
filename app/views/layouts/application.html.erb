@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Ruby Blog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <a style="color:#D93544" href="http://rubyonrails.org/download"></a>
+</head>
+<body>
+
+<div class="header">
+  <%= render 'partials/header' %>
+</div>
+
+  <div id="page">
+
+       <div id="page-bgtop">
+            <div id="page-bgbtm">
+               <div id="content">
+                         <div class="flash message">
+                             <% flash.each do |key,value| %>
+                             <p><%= value %> </p>
+                             <% end %>
+                         </div>
+
+
+                          <div id="yield">
+                             <%=yield%>
+                          </div>
+
+                          <div id="sidebar">
+                            <%= render 'partials/sidebar' %>
+                          </div>
+
+
+               <div style="clear: both;">&nbsp</div>
+
+              </div>
+         </div>
+      </div>
+  <!-- end #page-->
+  <div id="footer">
+   <p>&Copy: 2013, My Ruby Blog -Sample Project</p>
+  </div>
+  <!-- en #footer-->
+ </div>
+ <!-- end #wrapper-->
+</body>
+</html>
